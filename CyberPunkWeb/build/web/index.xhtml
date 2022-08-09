@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+          <link rel="stylesheet" href="css/estilo.css"></link>
+    </h:head>
+    <h:body>
+        <div id="rew">
+            <audio autoplay="autoplay" loop="loop" src="musica/som.mp3"></audio>
+        </div>
+        <h:form> 
+            <div id="j">
+            <img src="imagens/fd574b0e45.png" style="height: 150px"></img> 
+            </div>
+        <div id="todosite">
+            <p:fieldset legend="Cadastro" style="background-color: black; border: 2px solid black; border-radius: 12px;">
+            <p:panelGrid columns="2" style="width: 1155px">
+                <p:outputLabel value="ID Pessoal"></p:outputLabel>
+                <p:inputText value="#{cyberPunkBean.objPeca.idPessoal}"></p:inputText>
+                
+                <p:outputLabel value="Modelo"></p:outputLabel>
+                <p:inputText value="#{cyberPunkBean.objPeca.modelo}"></p:inputText>
+                
+                <p:outputLabel value="Localização do membro"></p:outputLabel>
+                <p:inputText value="#{cyberPunkBean.objPeca.localizaçaoDoMembro}"></p:inputText>
+                
+                <p:outputLabel value="Genêro"></p:outputLabel>
+                <p:inputText value="#{cyberPunkBean.objPeca.genêro}"></p:inputText>
+                
+                <p:outputLabel value="Ano"></p:outputLabel>
+                <p:inputMask mask="9999" value="#{cyberPunkBean.objPeca.ano}"></p:inputMask>
+            </p:panelGrid>            
+        </p:fieldset>  
+            
+            <p:toolbar styleClass="pop">
+                <p:toolbarGroup>
+                    <p:commandButton value ="Novo" action="#{cyberPunkBean.limpar()}" update="@form"></p:commandButton>
+                
+                <p:commandButton value="Adicionar" action="#{cyberPunkBean.adicionar()}" update="@form"></p:commandButton>
+                
+                <p:commandButton value="Editar" action="#{cyberPunkBean.editar()}" update="@form"></p:commandButton>
+                
+                <p:commandButton value="Excluir" action="#{cyberPunkBean.excluir()}" update="@form">
+                    <p:confirm message="Deseja realmente excluir?"/>
+                </p:commandButton>
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                    <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" />
+                    <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" />
+                </p:confirmDialog>           
+                <p:commandButton value="Listar" action="#{cyberPunkBean.listar()}" update="@form"></p:commandButton>
+            </p:toolbarGroup>
+        </p:toolbar> 
+        <br></br>        
+        <p:messages id="messages" showDetail="true" closable="true"></p:messages>       
+        <br></br>
+        <div id="imagem">
+            <p:fieldset legend="Produtos" style="background-image: url(https://images6.alphacoders.com/585/585940.png); border: 2px solid black; border-radius: 12px">
+            <img src="imagens/1.jpg" style="width:180px"></img>
+            <img src="imagens/2.jpg" style="width:180px"></img>
+            <img src="imagens/3.jpg" style="width:180px"></img>
+            <img src="imagens/4.jpg" style="width:180px"></img>
+            <img src="imagens/5.jpg" style="width:180px"></img>
+            <img src="imagens/6.jpg" style="width:180px"></img>
+            <img src="imagens/7.jpg" style="width:180px"></img>
+            <img src="imagens/8.jpg" style="width:180px"></img>
+            <img src="imagens/9.jpg" style="width:180px"></img>
+            <img src="imagens/10.jpg" style="width:180px"></img>
+            <img src="imagens/11.jpg" style="width:180px"></img>
+            <img src="imagens/12.jpg" style="width:180px"></img>
+            <img src="imagens/13.jpg" style="width:180px"></img>
+            <img src="imagens/14.jpg" style="width:180px"></img>
+            </p:fieldset>
+        </div>
+        <br></br>  
+        <br></br>  
+        <br></br>  
+        <br></br>  
+        <br></br>  
+        <br></br>       
+        <p:fieldset legend="Lista de peças cadastrados" style="background-color: black; border: 2px solid black; border-radius: 12px;">
+            <p:dataTable value="#{cyberPunkBean.listaCyberpunk}" var="cyberpunkweb">              
+                <p:column headerText="ID Pessoal" sortBy="#{cyberpunkweb.idPessoal}">
+                    <h:outputText value="#{cyberpunkweb.idPessoal}"></h:outputText>
+                </p:column>                              
+                <p:column headerText="Modelo" sortBy="#{cyberpunkweb.modelo}">
+                    <h:outputText value="#{cyberpunkweb.modelo}"></h:outputText>
+                </p:column>
+                <p:column headerText="Localização do membro" sortBy="#{cyberpunkweb.localizaçaoDoMembro}">
+                    <h:outputText value="#{cyberpunkweb.localizaçaoDoMembro}"></h:outputText>
+                </p:column>             
+                <p:column headerText="Genêro" sortBy="#{cyberpunkweb.genêro}">
+                    <h:outputText value="#{cyberpunkweb.genêro}"></h:outputText>
+                </p:column>              
+                <p:column headerText="Ano" sortBy="#{cyberpunkweb.ano}">
+                    <h:outputText value="#{cyberpunkweb.ano}"></h:outputText>
+                </p:column>              
+                <p:column>
+                    <p:commandButton value="Selecionar" action="#{cyberPunkBean.selecionar(cyberpunkweb)}" 
+                                     update="@form">
+                    </p:commandButton>
+                </p:column>
+            </p:dataTable>      
+        </p:fieldset>
+        </div>
+      </h:form>
+    </h:body>
+</html>
+

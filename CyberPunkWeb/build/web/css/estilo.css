@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/06/2020, 22:32:39
+    Author     : Bruno Antunes
+*/
+#todosite{
+    background-image: url("https://images8.alphacoders.com/403/403441.gif");
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+#inicio{
+    color: yellowgreen;
+    width: 1200px;
+    border: 2px solid black;
+    border-radius: 12px;
+    text-align: center;  
+    margin: auto;
+}
+.pop {
+  position: absolute;
+  right: 100px;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 10px;
+}
+h1{
+    font-size: 30px; letter-spacing: -1px; color: #DFBF84; text-transform: uppercase; text-shadow: 1px 1px 0 #000; margin: 10px 0 24px; text-align: center; line-height: 50px;
+}
+
+#rew{
+  position: absolute;
+  margin: auto;
+  right: 100px;
+  padding: 100px;
+}
+
+#imagem{
+    width: 1200px;   
+}
+
+#j{
+  width: 800px;
+  margin: auto;
+  border-left: 6px solid black;
+  background-color: lightgrey;
+  padding: 10px;
+  left: 100px;
+}
